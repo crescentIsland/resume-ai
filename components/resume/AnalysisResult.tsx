@@ -21,7 +21,7 @@ export default function AnalysisResult({ result, onReset }: Props) {
       <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex items-center justify-between">
         <div>
           <h2 className="text-xl font-bold text-slate-800">简历评分</h2>
-          <p className="text-slate-500 text-sm mt-1">基于 AI 综合评估</p>
+          <p className="text-slate-500 text-sm mt-1">{result.scoreReason}</p>
         </div>
         <div className={`text-6xl font-bold ${scoreColor}`}>{result.score}</div>
       </div>
@@ -30,22 +30,29 @@ export default function AnalysisResult({ result, onReset }: Props) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
           <h3 className="font-semibold text-slate-800 mb-3">优势亮点</h3>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-3">
             {result.strengths.map((s, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-600">
-                <span className="text-green-500 mt-0.5">✓</span>
-                {s}
+              <li key={i} className="flex gap-2 text-sm">
+                <span className="text-green-500 mt-0.5 shrink-0">✓</span>
+                <div>
+                  <p className="text-slate-800 font-medium">{s.point}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">{s.reason}</p>
+                </div>
               </li>
             ))}
           </ul>
         </div>
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
           <h3 className="font-semibold text-slate-800 mb-3">改进建议</h3>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-3">
             {result.improvements.map((s, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-600">
-                <span className="text-blue-500 mt-0.5">→</span>
-                {s}
+              <li key={i} className="flex gap-2 text-sm">
+                <span className="text-blue-500 mt-0.5 shrink-0">→</span>
+                <div>
+                  <p className="text-slate-800 font-medium">{s.problem}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">{s.why}</p>
+                  <p className="text-blue-600 text-xs mt-1 font-medium">改法：{s.howToFix}</p>
+                </div>
               </li>
             ))}
           </ul>
@@ -53,9 +60,9 @@ export default function AnalysisResult({ result, onReset }: Props) {
       </div>
 
       {/* Rewritten Sections */}
-      {Object.entries(result.rewrittenSections).some(([, v]) => v) && (
+      {Object.values(result.rewrittenSections).some(Boolean) && (
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
-          <h3 className="font-semibold text-slate-800 mb-4">AI 优化建议稿</h3>
+          <h3 className="font-semibold text-slate-800 mb-4">AI 改写建议稿</h3>
           <div className="flex flex-col gap-4">
             {result.rewrittenSections.summary && (
               <Section title="个人简介" content={result.rewrittenSections.summary} />
@@ -82,12 +89,16 @@ export default function AnalysisResult({ result, onReset }: Props) {
               >
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-slate-800 text-sm">{course.title}</span>
-                  <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">
+                  <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full shrink-0 ml-2">
                     {course.platform}
                   </span>
                 </div>
-                <p className="text-xs text-slate-500">{course.description}</p>
-                <span className="text-xs text-slate-400 mt-1">技能方向：{course.skillArea}</span>
+                <p className="text-xs text-slate-500">{course.reason}</p>
+                <div className="flex gap-2 mt-1">
+                  <span className="text-xs text-slate-400">{course.skillArea}</span>
+                  <span className="text-xs text-slate-300">·</span>
+                  <span className="text-xs text-slate-400">{course.duration}</span>
+                </div>
               </div>
             ))}
           </div>

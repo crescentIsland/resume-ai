@@ -11,12 +11,13 @@ export interface ResumeData {
 
 export interface AnalysisResult {
   score: number
-  strengths: string[]
-  improvements: string[]
+  scoreReason: string
+  strengths: { point: string; reason: string }[]
+  improvements: { problem: string; why: string; howToFix: string }[]
   rewrittenSections: {
-    summary?: string
-    experience?: string
-    skills?: string
+    summary: string | null
+    experience: string | null
+    skills: string | null
   }
   suggestedCourses: Course[]
 }
@@ -24,7 +25,7 @@ export interface AnalysisResult {
 export interface Course {
   title: string
   platform: string
-  description: string
-  url?: string
+  duration: string
   skillArea: string
+  reason: string
 }
