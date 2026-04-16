@@ -13,7 +13,8 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
+      style={{ backgroundColor: '#2d2660e8', borderColor: '#ffffff15' }}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -21,7 +22,7 @@ export default function Navbar() {
             style={{ background: 'linear-gradient(135deg, #91c53a, #5e55a2)' }}>
             AI
           </div>
-          <span className="font-bold text-lg" style={{ color: '#1a1a2e' }}>简历助手</span>
+          <span className="font-bold text-lg text-white">简历助手</span>
         </Link>
 
         {/* Nav Links */}
@@ -34,11 +35,11 @@ export default function Navbar() {
                 href={link.href}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all"
                 style={{
-                  backgroundColor: isActive ? '#5e55a2' : 'transparent',
-                  color: isActive ? '#fff' : '#4a4a6a',
+                  backgroundColor: isActive ? '#91c53a' : 'transparent',
+                  color: isActive ? '#fff' : '#ccc8f0',
                 }}
                 onMouseEnter={e => {
-                  if (!isActive) (e.currentTarget as HTMLElement).style.backgroundColor = '#f0effe'
+                  if (!isActive) (e.currentTarget as HTMLElement).style.backgroundColor = '#ffffff15'
                 }}
                 onMouseLeave={e => {
                   if (!isActive) (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent'

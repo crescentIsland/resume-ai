@@ -1,0 +1,242 @@
+[
+  {
+    "id": "1",
+    "title": "产品经理入门到进阶",
+    "platform": "网易云课堂",
+    "duration": "约20小时",
+    "skillTags": ["产品思维", "需求分析", "产品经理", "PRD", "竞品分析"],
+    "description": "系统学习产品经理核心能力，涵盖需求挖掘、PRD撰写、竞品分析、产品迭代全流程"
+  },
+  {
+    "id": "2",
+    "title": "人人都是产品经理（系列课）",
+    "platform": "慕课网",
+    "duration": "约15小时",
+    "skillTags": ["产品经理", "用户研究", "产品设计", "需求文档"],
+    "description": "从零基础到具备独立产品能力，适合转型或初入产品岗的同学"
+  },
+  {
+    "id": "3",
+    "title": "用户体验设计与研究",
+    "platform": "Coursera",
+    "duration": "约18小时",
+    "skillTags": ["用户研究", "UX设计", "用户访谈", "可用性测试", "用户体验"],
+    "description": "Google官方UX设计证书课程，覆盖用户访谈、原型设计、可用性测试等核心方法"
+  },
+  {
+    "id": "4",
+    "title": "SQL从入门到实战",
+    "platform": "B站",
+    "duration": "约12小时",
+    "skillTags": ["SQL", "数据分析", "数据库", "数据查询"],
+    "description": "零基础学习SQL，掌握数据查询、聚合、多表联查等核心语法，配套实战练习"
+  },
+  {
+    "id": "5",
+    "title": "Python数据分析实战",
+    "platform": "网易云课堂",
+    "duration": "约25小时",
+    "skillTags": ["Python", "数据分析", "Pandas", "数据可视化", "NumPy"],
+    "description": "使用Python进行数据清洗、分析和可视化，掌握Pandas、Matplotlib等核心库"
+  },
+  {
+    "id": "6",
+    "title": "Excel数据分析高级技巧",
+    "platform": "B站",
+    "duration": "约8小时",
+    "skillTags": ["Excel", "数据分析", "数据透视表", "函数"],
+    "description": "从基础到进阶，掌握VLOOKUP、数据透视表、图表制作等职场必备Excel技能"
+  },
+  {
+    "id": "7",
+    "title": "Axure RP原型设计从入门到精通",
+    "platform": "慕课网",
+    "duration": "约15小时",
+    "skillTags": ["Axure", "原型设计", "产品经理", "交互设计"],
+    "description": "系统学习Axure RP，制作低保真和高保真原型，掌握交互逻辑设计"
+  },
+  {
+    "id": "8",
+    "title": "Figma UI/UX设计实战",
+    "platform": "Udemy",
+    "duration": "约20小时",
+    "skillTags": ["Figma", "UI设计", "UX设计", "原型设计", "交互设计"],
+    "description": "从零学习Figma，完成完整的App界面设计项目，掌握组件库和自动布局"
+  },
+  {
+    "id": "9",
+    "title": "数据驱动的产品决策",
+    "platform": "Coursera",
+    "duration": "约10小时",
+    "skillTags": ["数据分析", "产品经理", "A/B测试", "数据驱动", "指标体系"],
+    "description": "学习如何用数据指导产品决策，掌握A/B测试、漏斗分析、指标体系搭建"
+  },
+  {
+    "id": "10",
+    "title": "STAR法则与面试技巧",
+    "platform": "B站",
+    "duration": "约4小时",
+    "skillTags": ["面试技巧", "STAR法则", "求职", "自我介绍", "行为面试"],
+    "description": "系统讲解STAR面试法则，帮助你把经历转化为有说服力的面试故事"
+  },
+  {
+    "id": "11",
+    "title": "互联网产品运营入门",
+    "platform": "网易云课堂",
+    "duration": "约16小时",
+    "skillTags": ["运营", "内容运营", "用户运营", "活动运营", "数据运营"],
+    "description": "全面了解互联网运营岗位，覆盖内容、用户、活动、数据运营四大方向"
+  },
+  {
+    "id": "12",
+    "title": "增长黑客与用户增长",
+    "platform": "Udemy",
+    "duration": "约12小时",
+    "skillTags": ["用户增长", "增长黑客", "AARRR", "获客", "留存"],
+    "description": "学习增长思维和AARRR模型，掌握用户获取、激活、留存、变现的核心方法"
+  },
+  {
+    "id": "13",
+    "title": "商业分析与战略思维",
+    "platform": "Coursera",
+    "duration": "约14小时",
+    "skillTags": ["商业分析", "战略思维", "SWOT", "商业模式", "市场分析"],
+    "description": "培养系统性商业思维，学习市场分析框架、商业模式设计和战略规划方法"
+  },
+  {
+    "id": "14",
+    "title": "项目管理基础（PMP备考）",
+    "platform": "慕课网",
+    "duration": "约30小时",
+    "skillTags": ["项目管理", "PMP", "敏捷开发", "Scrum", "跨部门协作"],
+    "description": "学习项目管理核心知识，掌握敏捷/瀑布方法论，提升跨团队协作能力"
+  },
+  {
+    "id": "15",
+    "title": "职场沟通与表达技巧",
+    "platform": "B站",
+    "duration": "约6小时",
+    "skillTags": ["沟通能力", "表达", "汇报", "PPT", "结构化思维"],
+    "description": "提升职场沟通效率，学习金字塔原理、结构化表达和高效汇报方法"
+  },
+  {
+    "id": "16",
+    "title": "机器学习入门（Andrew Ng）",
+    "platform": "Coursera",
+    "duration": "约60小时",
+    "skillTags": ["机器学习", "AI", "深度学习", "Python", "算法"],
+    "description": "吴恩达经典机器学习课程，系统学习监督学习、无监督学习等核心算法"
+  },
+  {
+    "id": "17",
+    "title": "AI产品经理实战指南",
+    "platform": "网易云课堂",
+    "duration": "约18小时",
+    "skillTags": ["AI产品", "产品经理", "大模型", "AI应用", "Prompt工程"],
+    "description": "专为产品经理设计的AI实战课，学习大模型产品设计、Prompt工程和AI落地案例"
+  },
+  {
+    "id": "18",
+    "title": "市场营销与品牌策略",
+    "platform": "Coursera",
+    "duration": "约20小时",
+    "skillTags": ["市场营销", "品牌", "营销策略", "消费者行为", "数字营销"],
+    "description": "系统学习市场营销理论和实践，掌握品牌建设、消费者洞察和营销推广方法"
+  },
+  {
+    "id": "19",
+    "title": "JavaScript前端开发入门",
+    "platform": "慕课网",
+    "duration": "约30小时",
+    "skillTags": ["JavaScript", "前端开发", "HTML", "CSS", "Web开发"],
+    "description": "从零学习前端开发，掌握HTML/CSS/JavaScript基础，能独立完成网页制作"
+  },
+  {
+    "id": "20",
+    "title": "React框架实战",
+    "platform": "Udemy",
+    "duration": "约35小时",
+    "skillTags": ["React", "前端开发", "JavaScript", "组件化", "前端框架"],
+    "description": "深入学习React框架，掌握Hooks、状态管理、路由等核心概念，完成实战项目"
+  },
+  {
+    "id": "21",
+    "title": "数据可视化与BI工具",
+    "platform": "B站",
+    "duration": "约10小时",
+    "skillTags": ["数据可视化", "Tableau", "Power BI", "数据分析", "图表设计"],
+    "description": "学习主流BI工具，掌握数据可视化最佳实践，制作专业的数据报告和Dashboard"
+  },
+  {
+    "id": "22",
+    "title": "演讲与公众表达训练",
+    "platform": "网易云课堂",
+    "duration": "约8小时",
+    "skillTags": ["演讲", "公众表达", "沟通", "领导力", "自信"],
+    "description": "克服演讲恐惧，学习结构化表达和临场应对技巧，提升公众场合的表达能力"
+  },
+  {
+    "id": "23",
+    "title": "产品方案题解题框架",
+    "platform": "B站",
+    "duration": "约5小时",
+    "skillTags": ["产品面试", "产品方案题", "产品经理", "面试技巧"],
+    "description": "专为产品经理面试设计，系统讲解产品方案题的解题框架和高分答题策略"
+  },
+  {
+    "id": "24",
+    "title": "竞品分析方法论与实战",
+    "platform": "慕课网",
+    "duration": "约8小时",
+    "skillTags": ["竞品分析", "产品经理", "市场分析", "产品策略"],
+    "description": "学习竞品分析的完整方法论，从框架搭建到深度分析，产出有价值的竞品报告"
+  },
+  {
+    "id": "25",
+    "title": "商业数据分析与决策",
+    "platform": "Coursera",
+    "duration": "约16小时",
+    "skillTags": ["数据分析", "商业分析", "SQL", "Excel", "数据决策"],
+    "description": "结合商业场景学习数据分析，掌握从数据提取到业务洞察的完整分析链路"
+  },
+  {
+    "id": "26",
+    "title": "敏捷开发与Scrum实践",
+    "platform": "Udemy",
+    "duration": "约10小时",
+    "skillTags": ["敏捷开发", "Scrum", "项目管理", "迭代", "跨部门协作"],
+    "description": "理解敏捷开发理念，掌握Scrum框架中的Sprint、回顾会、站会等核心实践"
+  },
+  {
+    "id": "27",
+    "title": "英语商务写作与邮件沟通",
+    "platform": "Coursera",
+    "duration": "约12小时",
+    "skillTags": ["英语", "商务英语", "写作", "沟通", "外资企业"],
+    "description": "提升英文商务写作能力，学习专业邮件、报告和提案的写作规范与技巧"
+  },
+  {
+    "id": "28",
+    "title": "用户增长数据分析实战",
+    "platform": "网易云课堂",
+    "duration": "约14小时",
+    "skillTags": ["用户增长", "数据分析", "漏斗分析", "留存分析", "AB测试"],
+    "description": "结合真实案例学习增长数据分析，掌握漏斗、留存、AB测试等核心分析方法"
+  },
+  {
+    "id": "29",
+    "title": "社交媒体运营与内容策略",
+    "platform": "B站",
+    "duration": "约9小时",
+    "skillTags": ["内容运营", "社交媒体", "新媒体", "微博", "微信公众号"],
+    "description": "学习新媒体内容策略，掌握平台算法规律和爆款内容创作方法"
+  },
+  {
+    "id": "30",
+    "title": "创业思维与商业模式设计",
+    "platform": "Coursera",
+    "duration": "约15小时",
+    "skillTags": ["创业", "商业模式", "精益创业", "MVP", "商业创新"],
+    "description": "学习精益创业方法论，掌握商业模式画布、MVP验证和快速迭代思维"
+  }
+]
