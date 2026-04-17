@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
+import { ReActStep } from '@/lib/react-agent'
 
 interface SkillGap { skill: string; importance: '高' | '中' | '低'; reason: string }
 interface WeekTask { week: string; focus: string; tasks: string[] }
@@ -13,7 +14,7 @@ interface PlanResult {
   weeklyPlan: WeekTask[]
   recommendedCourses: CourseRec[]
   interviewTips: string[]
-  _ragMeta: { skillGapText: string; retrievedCount: number }
+  _reactTrace: ReActStep[]
 }
 
 const importanceColor = { 高: '#f87171', 中: '#fbbf24', 低: '#91c53a' }
@@ -26,6 +27,7 @@ export default function PlanPage() {
   const [weeksLeft, setWeeksLeft] = useState('6')
   const [result, setResult] = useState<PlanResult | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [traceOpen, setTraceOpen] = useState(false)
 
   const handleSubmit = async () => {
     if (!resumeText.trim() || !jdText.trim()) {
@@ -63,7 +65,7 @@ export default function PlanPage() {
               ◎
             </div>
             <h2 className="text-xl font-bold mb-2" style={{ color: '#1a1a2e' }}>AI 正在分析中</h2>
-            <p className="text-sm" style={{ color: '#9999b3' }}>正在检索课程库、生成你的专属规划...</p>
+            <p className="text-sm" style={{ color: '#9999b3' }}>ReAct Agent 正在自主调用工具分析，请稍候...</p>
             <div className="flex gap-1.5 justify-center mt-6">
               {[0, 1, 2].map(i => (
                 <div key={i} className="w-2 h-2 rounded-full animate-bounce"
@@ -90,7 +92,7 @@ export default function PlanPage() {
               <div>
                 <h1 className="text-2xl font-bold" style={{ color: '#1a1a2e' }}>你的求职规划</h1>
                 <p className="text-sm mt-1" style={{ color: '#9999b3' }}>
-                  课程推荐来自真实课程库（RAG 检索，共匹配 {result._ragMeta.retrievedCount} 门相关课程）
+                  由 ReAct Agent 自主分析生成 · 课程推荐来自 RAG 知识库
                 </p>
               </div>
               <button onClick={() => setStep('input')} className="text-sm px-4 py-2 rounded-xl"
@@ -115,6 +117,60 @@ export default function PlanPage() {
                 <p className="text-sm" style={{ color: '#6b6b8a' }}>{result.matchReason}</p>
               </div>
             </div>
+
+            {/* ReAct 推理追踪折叠块 */}
+            {result._reactTrace && result._reactTrace.length > 0 && (
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid #e8e0ff' }}>
+                <button
+                  onClick={() => setTraceOpen(o => !o)}
+                  className="w-full flex items-center justify-between px-5 py-3.5 transition-colors hover:opacity-80"
+                  style={{ backgroundColor: '#faf8ff' }}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm" style={{ color: '#5e55a2' }}>⚙️</span>
+                    <span className="text-sm font-semibold" style={{ color: '#5e55a2' }}>查看 AI 推理过程</span>
+                    <span className="text-xs px-2 py-0.5 rounded-full"
+                      style={{ backgroundColor: '#f0effe', color: '#8078c4' }}>
+                      ReAct Agent
+                    </span>
+                    <span className="text-xs px-2 py-0.5 rounded-full"
+                      style={{ backgroundColor: '#f3faeb', color: '#6d9a2a' }}>
+                      {result._reactTrace.filter(s => s.type === 'action').length} 次工具调用
+                    </span>
+                  </div>
+                  <span className="text-xs transition-transform"
+                    style={{ color: '#9999b3', transform: traceOpen ? 'rotate(180deg)' : 'rotate(0deg)', display: 'inline-block' }}>
+                    ▼
+                  </span>
+                </button>
+                {traceOpen && (
+                  <div className="px-5 py-4 flex flex-col gap-3"
+                    style={{ backgroundColor: '#ffffff', borderTop: '1px solid #f0effe' }}>
+                    {result._reactTrace.map((step, i) => (
+                      <div key={i} className="flex gap-3">
+                        <div className="shrink-0 mt-0.5">
+                          {step.type === 'thought' && (
+                            <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                              style={{ backgroundColor: '#f0effe', color: '#5e55a2' }}>思考</span>
+                          )}
+                          {step.type === 'action' && (
+                            <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                              style={{ backgroundColor: '#f3faeb', color: '#6d9a2a' }}>行动</span>
+                          )}
+                          {step.type === 'observation' && (
+                            <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
+                              style={{ backgroundColor: '#fffbeb', color: '#d97706' }}>观察</span>
+                          )}
+                        </div>
+                        <p className="text-xs leading-relaxed whitespace-pre-wrap flex-1"
+                          style={{ color: '#4a4a6a' }}>
+                          {step.content}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* 技能缺口 */}
             <div className="bg-white rounded-2xl p-6" style={{ border: '1px solid #e8e0ff' }}>

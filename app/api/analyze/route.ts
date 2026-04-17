@@ -14,10 +14,10 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const rawResult = await analyzeResume(resumeText)
+    const { result: rawResult, thinking } = await analyzeResume(resumeText)
     const result: AnalysisResult = JSON.parse(rawResult)
 
-    return NextResponse.json(result)
+    return NextResponse.json({ ...result, _thinking: thinking })
   } catch (error) {
     console.error('Analyze error:', error)
     return NextResponse.json(
